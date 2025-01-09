@@ -61,7 +61,9 @@ fn test_light_client_update(
 #[allow(clippy::ptr_arg)]
 /// This is a test for when the container does not support deserialization from YAML
 /// It deserialized from SSZ bytes and checks the Merkle root matches the one defined by the test
-fn ssz_static_test_no_yaml<T: SimpleSerialize + PartialEq + core::fmt::Debug + Clone + Sized>(
+fn ssz_static_test_no_yaml<
+    T: SimpleSerialize + PartialEq + core::fmt::Debug + Clone + Sized,
+>(
     case: &PathBuf,
 ) {
     // next read the ssz snappy file
