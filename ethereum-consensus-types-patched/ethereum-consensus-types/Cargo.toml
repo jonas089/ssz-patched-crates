@@ -22,5 +22,5 @@ blst = { version = "0.3.11", default-features = false, features = [
 serde = { workspace = true }
 serde_with = "3.3.0"
 rstest = "0.18.2"
-ethereum-consensus = { git = "https://github.com/ralexstokes/ethereum-consensus", rev = "f3bff52e9c43866f231ec40c8ab0e34125a8957f" }
+ethereum-consensus = { workspace = true }
 test-utils = { path = "../test-utils" }

@@ -394,7 +394,7 @@ version = "0.1.0"
 dependencies = [
  "clap",
  "dotenv",
- "ethereum-consensus 0.1.1",
+ "ethereum-consensus",
  "futures-util",
  "hex",
  "http",
@@ -474,15 +474,6 @@ dependencies = [
  "radium",
  "tap",
  "wyz",
-]
-
-[[package]]
-name = "block-buffer"
-version = "0.9.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4152116fd6e9dadb291ae18fc1ec3575ed6d84c29642d97890f4b4a3417297e4"
-dependencies = [
- "generic-array",
 ]
 
 [[package]]
@@ -982,7 +973,7 @@ version = "0.10.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292"
 dependencies = [
- "block-buffer 0.10.4",
+ "block-buffer",
  "const-oid",
  "crypto-common",
  "subtle",
@@ -1181,9 +1172,9 @@ dependencies = [
  "serde_json",
  "serde_with 1.14.0",
  "serde_yaml 0.8.26",
- "sha2 0.10.8",
+ "sha2",
  "snap",
- "ssz_rs 0.9.0",
+ "ssz_rs",
  "thiserror 1.0.69",
  "tokio",
  "tokio-stream",
@@ -1193,42 +1184,17 @@ dependencies = [
 ]
 
 [[package]]
-name = "ethereum-consensus"
-version = "0.1.1"
-source = "git+https://github.com/ralexstokes/ethereum-consensus?rev=f3bff52e9c43866f231ec40c8ab0e34125a8957f#f3bff52e9c43866f231ec40c8ab0e34125a8957f"
-dependencies = [
- "async-stream",
- "blst",
- "bs58",
- "c-kzg",
- "enr",
- "hex",
- "integer-sqrt",
- "multiaddr",
- "multihash",
- "rand 0.8.5",
- "serde",
- "serde_json",
- "serde_yaml 0.8.26",
- "sha2 0.10.8",
- "ssz_rs 0.9.0 (git+https://github.com/ralexstokes/ssz-rs?rev=5f1ec833718efa07bbbff427ab28a1eeaa706164)",
- "thiserror 1.0.69",
- "tokio",
- "tokio-stream",
-]
-
-[[package]]
 name = "ethereum-consensus-types"
 version = "0.1.0"
 dependencies = [
  "blst",
- "ethereum-consensus 0.1.1 (git+https://github.com/ralexstokes/ethereum-consensus?rev=f3bff52e9c43866f231ec40c8ab0e34125a8957f)",
+ "ethereum-consensus",
  "hex",
  "hex-literal",
  "rstest",
  "serde",
  "serde_with 3.12.0",
- "ssz_rs 0.9.0",
+ "ssz_rs",
  "test-utils",
 ]
 
@@ -2073,7 +2039,7 @@ dependencies = [
  "cfg-if",
  "ecdsa 0.14.8",
  "elliptic-curve 0.12.3",
- "sha2 0.10.8",
+ "sha2",
 ]
 
 [[package]]
@@ -2086,7 +2052,7 @@ dependencies = [
  "ecdsa 0.16.9",
  "elliptic-curve 0.13.8",
  "once_cell",
- "sha2 0.10.8",
+ "sha2",
 ]
 
 [[package]]
@@ -2237,7 +2203,7 @@ dependencies = [
  "core2",
  "digest 0.10.7",
  "multihash-derive",
- "sha2 0.10.8",
+ "sha2",
  "unsigned-varint",
 ]
 
@@ -2362,12 +2328,6 @@ name = "once_cell"
 version = "1.20.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1261fe7e33c73b354eab43b1273a57c8f967d0391e80353e51f764ac02cf6775"
-
-[[package]]
-name = "opaque-debug"
-version = "0.3.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c08d65885ee38876c4f86fa503fb49d7b507c2b62552df7c70b2fce627e06381"
 
 [[package]]
 name = "open-fastrlp"
@@ -3207,7 +3167,7 @@ dependencies = [
  "password-hash",
  "pbkdf2",
  "salsa20",
- "sha2 0.10.8",
+ "sha2",
 ]
 
 [[package]]
@@ -3438,19 +3398,6 @@ dependencies = [
 
 [[package]]
 name = "sha2"
-version = "0.9.9"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4d58a1e1bf39749807d89cf2d98ac2dfa0ff1cb3faa38fbb64dd88ac8013d800"
-dependencies = [
- "block-buffer 0.9.0",
- "cfg-if",
- "cpufeatures",
- "digest 0.9.0",
- "opaque-debug",
-]
-
-[[package]]
-name = "sha2"
 version = "0.10.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "793db75ad2bcafc3ffa7c68b215fee268f537982cd901d132f89c6343f3a3dc8"
@@ -3604,22 +3551,9 @@ dependencies = [
  "project-root",
  "serde",
  "serde_json",
- "sha2 0.10.8",
+ "sha2",
  "snap",
- "ssz_rs_derive 0.9.0",
-]
-
-[[package]]
-name = "ssz_rs"
-version = "0.9.0"
-source = "git+https://github.com/ralexstokes/ssz-rs?rev=5f1ec833718efa07bbbff427ab28a1eeaa706164#5f1ec833718efa07bbbff427ab28a1eeaa706164"
-dependencies = [
- "alloy-primitives",
- "bitvec",
- "hex",
- "serde",
- "sha2 0.9.9",
- "ssz_rs_derive 0.9.0 (git+https://github.com/ralexstokes/ssz-rs?rev=5f1ec833718efa07bbbff427ab28a1eeaa706164)",
+ "ssz_rs_derive",
 ]
 
 [[package]]
@@ -3628,17 +3562,7 @@ version = "0.9.0"
 dependencies = [
  "proc-macro2",
  "quote",
- "ssz_rs 0.9.0",
- "syn 1.0.109",
-]
-
-[[package]]
-name = "ssz_rs_derive"
-version = "0.9.0"
-source = "git+https://github.com/ralexstokes/ssz-rs?rev=5f1ec833718efa07bbbff427ab28a1eeaa706164#5f1ec833718efa07bbbff427ab28a1eeaa706164"
-dependencies = [
- "proc-macro2",
- "quote",
+ "ssz_rs",
  "syn 1.0.109",
 ]
 
@@ -3801,7 +3725,7 @@ dependencies = [
  "serde",
  "serde_yaml 0.9.34+deprecated",
  "snap",
- "ssz_rs 0.9.0",
+ "ssz_rs",
 ]
 
 [[package]]

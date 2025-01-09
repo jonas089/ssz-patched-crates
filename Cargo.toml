@@ -13,6 +13,7 @@ members = [
 
 [workspace.dependencies]
 ssz_rs = { path = "ssz-rs-patched/ssz-rs" }
+ethereum-consensus = { path = "ethereum-consensus-patched/ethereum-consensus" }
 serde = "1.0.158"
 serde_with = "3.3.0"
 rstest = "0.18.2"
