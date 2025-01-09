@@ -3599,6 +3599,7 @@ version = "0.9.0"
 dependencies = [
  "alloy-primitives",
  "bitvec",
+ "borsh",
  "hex",
  "project-root",
  "serde",
