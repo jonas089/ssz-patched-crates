@@ -31,7 +31,7 @@ ec = [
 ]
 
 [dependencies]
-ssz_rs = { git = "https://github.com/jonas089/ssz-rs-patched", branch = "borsh" }
+ssz_rs = { workspace = true }
 blst = "0.3.11"
 rand = "0.8.4"
 thiserror = "1.0.30"
