@@ -12,11 +12,11 @@ members = [
 ]
 
 [workspace.dependencies]
+ssz_rs = { path = "ssz-rs-patched/ssz-rs" }
 serde = "1.0.158"
 serde_with = "3.3.0"
 rstest = "0.18.2"
 ethereum-consensus = { git = "https://github.com/ralexstokes/ethereum-consensus", rev = "f3bff52e9c43866f231ec40c8ab0e34125a8957f" }
-ssz_rs = { git = "https://github.com/jonas089/ssz-rs-patched", branch = "borsh" }
 blst = { version = "0.3.11", default-features = false, features = [
     "portable",
     "no-threads",
