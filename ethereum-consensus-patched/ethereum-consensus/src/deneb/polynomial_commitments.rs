@@ -45,7 +45,7 @@ pub fn compute_kzg_proof<const BYTES_PER_BLOB: usize>(
 
     let (proof, evaluation) =
         c_kzg::KzgProof::compute_kzg_proof(&blob, &evaluation_point, kzg_settings)?;
-    let proof = KzgProof::try_from(proof.to_bytes().as_ref()).expect("correct size");
+    let proof = KzgProof::try_from(proof.to_bytes().as_ref() as &[u8]).expect("correct size");
     let evaluation = FieldElement::try_from(evaluation.as_slice()).expect("correct size");
 
     let result = ProofAndEvaluation { proof, evaluation };
@@ -62,7 +62,7 @@ pub fn compute_blob_kzg_proof<const BYTES_PER_BLOB: usize>(
 
     let proof = c_kzg::KzgProof::compute_blob_kzg_proof(&blob, &commitment, kzg_settings)?;
 
-    Ok(KzgProof::try_from(proof.to_bytes().as_ref()).expect("input is correct size"))
+    Ok(KzgProof::try_from(proof.to_bytes().as_ref() as &[u8]).expect("input is correct size"))
 }
 
 pub fn verify_kzg_proof(
